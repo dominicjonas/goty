@@ -24,14 +24,16 @@ const SignIn = () => {
         const token = credential.accessToken
         // signed in user info
         const user = result.user
-        console.log('signed in user: ', user)
-        console.log('signed in user access token: ', token)
       })
       .catch((err) => {
         console.log(err)
       })
   }
-  return <button onClick={signInWithGoogle}>Sign in with Google</button>
+  return (
+    <>
+      <button onClick={signInWithGoogle}>Sign in with Google</button>
+    </>
+  )
 }
 
 export default SignIn
