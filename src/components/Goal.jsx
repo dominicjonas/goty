@@ -1,8 +1,22 @@
 import React from 'react'
+import { firebaseConfig } from '../firebase'
+import { initializeApp } from '@firebase/app'
 
-const Goal = ({ text, completed, userId, goals, setGoals, goal, id }) => {
-  const handleDelete = () => {
-    setGoals(goals.filter((el) => el.goalId !== goal.goalId))
+import { deleteDoc, doc, getFirestore } from 'firebase/firestore'
+
+// initialize firebase app
+initializeApp(firebaseConfig)
+
+// init services
+const db = getFirestore()
+
+const Goal = ({ text, userId, goalId }) => {
+  const handleDelete = (e) => {
+    // setGoals(goals.filter((el) => el.goalId !== goal.goalId))
+    const docRef = doc(db, 'goals', goalId)
+    deleteDoc(docRef).then(() => {
+      console.log(`Goal id: ${goalId} '${text}' has been deleted`)
+    })
   }
 
   return (
