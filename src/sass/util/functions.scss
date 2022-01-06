@@ -1,0 +1,19 @@
+//* must import native 'math' sass module to make this funciton work without errors
+@use 'sass:math';
+
+//*  function to convert pixels to rem units
+
+@function rem($pixels, $content: 16) {
+  @return (math.div($pixels, $content)) * 1rem;
+}
+
+//? ex)
+// h1 {
+//   font-size: rem(30);
+// }
+
+//? gives you ..
+
+// h1 {
+//   font-size: 1.875rem;
+// }

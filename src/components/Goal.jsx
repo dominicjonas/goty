@@ -22,15 +22,14 @@ const Goal = ({ text, userId, goalId }) => {
   return (
     <div className='goal-container'>
       <li className='goal-item'>
-        <p>{text}</p>
-        <p>user id: {userId}</p>
+        <p className='goal-text'>{text}</p>
+        <button className='complete-btn'>
+          <i className='fas fa-check'></i>
+        </button>
+        <button onClick={handleDelete} className='delete-btn'>
+          <i className='far fa-trash-alt'></i>
+        </button>
       </li>
-      <button>
-        <i className='fas fa-check'></i>
-      </button>
-      <button onClick={handleDelete}>
-        <i className='far fa-trash-alt'></i>
-      </button>
     </div>
   )
 }

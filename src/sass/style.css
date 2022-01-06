@@ -1,0 +1,257 @@
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-redhat: "Red Hat Display", sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+:root {
+  --light-complete-btn: hsl(148, 86%, 43%);
+  --light-delete-btn: hsl(0, 72%, 62%);
+  --input-border: hsl(0, 0%, 87%);
+  --dark-bg: hsl(230, 17%, 14%);
+  --dark-top-bg: hsl(232, 19%, 15%);
+  --dark-card: hsl(228, 28%, 20%);
+  --dark-text1: hsl(228, 34%, 66%);
+  --dark-text2: hsl(0, 0%, 100%);
+  --dark-card-hover: hsl(228, 25%, 27%);
+  --light-bg: hsl(0, 0%, 97%);
+  --light-top-bg: hsl(225, 100%, 98%);
+  --light-accent: hsl(155, 68%, 55%);
+  --light-goal: hsl(0, 0%, 93%);
+  --light-goal-text: hsl(0, 0%, 47%);
+  --light-goal-hover: hsl(222, 25%, 90%);
+  --light-text1: hsl(229, 22%, 90%);
+  --light-text2: hsl(191, 31%, 23%);
+  --background: var(--light-bg);
+  --text-color1: var(--light-text1);
+  --text-color2: var(--light-text2);
+  --text-color3: var(--light-goal-text);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background: var(--background);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h2 {
+  color: var(--text-color2);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app-header {
+  margin-top: 6.25rem;
+}
+.app-header .title {
+  margin-bottom: 0.3125rem;
+  font-size: 3.125rem;
+  text-align: center;
+  color: var(--light-text2);
+}
+
+.year {
+  color: var(--light-text2);
+  position: absolute;
+  margin-top: -0.3125rem;
+  text-align: center;
+  font-size: 1.875rem;
+  opacity: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 71.875em) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 1.5625rem;
+  max-width: 68.75rem;
+  margin: 0 auto 2.875rem;
+}
+@media (min-width: 71.875em) {
+  .container {
+    padding: 0;
+  }
+}
+
+.signin-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.signin-container button {
+  padding: 0.625rem 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px solid var(--text-color2);
+  color: var(--text-color2);
+  transition: background 200ms ease;
+}
+.signin-container button:hover {
+  background: var(--text-color2);
+  color: var(--text-color1);
+}
+
+.signout-button {
+  padding: 0.625rem 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px solid var(--text-color2);
+  color: var(--text-color2);
+  transition: background 200ms ease;
+}
+.signout-button:hover {
+  background: var(--text-color2);
+  color: var(--text-color1);
+}
+
+.goty-title {
+  text-align: center;
+  font-size: 3.125rem;
+  color: var(--light-text2);
+  font-family: var(--font-redhat);
+  letter-spacing: -5px;
+}
+
+.goal-form-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6.25rem;
+}
+.goal-form-container label {
+  margin-bottom: 0.3125rem;
+}
+.goal-form-container input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  outline: 1px solid var(--input-border);
+}
+.goal-form-container button {
+  padding: 0.3125rem 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-top: none;
+  color: var(--text-color2);
+  transition: background 200ms ease;
+}
+.goal-form-container button:hover {
+  background: var(--text-color2);
+  color: var(--text-color1);
+}
+
+.goal-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-list {
+  padding: 0;
+}
+
+.goal-item {
+  display: flex;
+  margin-top: 0.625rem;
+  background: var(--light-goal);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.goal-item .goal-text {
+  flex: 1;
+  padding-left: 1.25rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.0625rem;
+  font-family: var(--font-poppins);
+  font-weight: 200;
+  color: var(--light-goal-text);
+}
+.goal-item button {
+  padding: 0.625rem;
+  border: none;
+  cursor: pointer;
+}
+.goal-item .complete-btn {
+  color: var(--light-complete-btn);
+}
+.goal-item .delete-btn {
+  color: var(--light-delete-btn);
+}
+
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 25rem;
+  color: var(--text-color2);
+}
+.countdown-container .day,
+.countdown-container .hour,
+.countdown-container .minute,
+.countdown-container .second {
+  font-size: 1.5625rem;
+  text-align: center;
+  font-weight: 200;
+  color: var(--text-color2);
+}
+
+/*# sourceMappingURL=style.css.map */

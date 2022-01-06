@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 import Goal from './Goal'
+import Countdown from './Countdown'
 import { firebaseConfig } from '../firebase'
 import { initializeApp } from '@firebase/app'
 
@@ -27,10 +29,12 @@ const colRef = collection(db, 'goals')
 // queries
 const q = query(colRef, orderBy('createdAt'))
 
-const GoalDisplay = () => {
+const GoalDisplay = ({ titleRef }) => {
   const [userCred, setUserCred] = useState({})
   const [goals, setGoals] = useState([])
   const [inputText, setInputText] = useState('')
+
+  const gotyRef = useRef()
 
   // dont need this useEffect, just to see the user details
   useEffect(() => {
@@ -45,6 +49,23 @@ const GoalDisplay = () => {
     })
     return () => {}
   }, [])
+
+  // useEffect(() => {
+  //   const tl = gsap.timeline({
+  //     defaults: { duration: 0.75, ease: 'power1.out' }
+  //   })
+  //   tl.fromTo(
+  //     titleRef.current,
+  //     { y: 0, opacity: 1 },
+  //     { y: '-150px', opacity: 0, duration: 1.5 }
+  //   )
+  //   tl.fromTo(
+  //     gotyRef.current,
+  //     { y: '-450px', opacity: 0 },
+  //     { y: '10px', opacity: 1, duration: 1.5 }
+  //   )
+  //   return () => {}
+  // }, [])
 
   const submitGoalHandler = (e) => {
     e.preventDefault()
@@ -62,9 +83,11 @@ const GoalDisplay = () => {
 
   return (
     <div>
-      <h1>Goals to be displayed here upon login</h1>
-      <h2>Current signed in user: {userCred.displayName}</h2>
-      <form>
+      <h1 className='goty-title' ref={gotyRef}>
+        GOTY
+      </h1>
+
+      <form className='goal-form-container'>
         <label>Add a goal</label>
         <input
           value={inputText}
@@ -91,6 +114,7 @@ const GoalDisplay = () => {
             ))}
         </ul>
       </div>
+      <Countdown />
     </div>
   )
 }

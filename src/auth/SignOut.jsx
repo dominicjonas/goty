@@ -21,7 +21,11 @@ const Signout = () => {
   }
 
   return (
-    auth.currentUser && <button onClick={handleSignOut}>Sign Out</button>
+    auth.currentUser && (
+      <button className='signout-button' onClick={handleSignOut}>
+        Sign Out
+      </button>
+    )
   )
 }
 

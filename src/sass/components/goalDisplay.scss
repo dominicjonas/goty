@@ -1,0 +1,76 @@
+@use '../util/' as *;
+
+.goty-title {
+  text-align: center;
+  font-size: rem(50);
+  color: var(--light-text2);
+  font-family: var(--font-redhat);
+  letter-spacing: -5px;
+}
+
+.goal-form-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(100);
+  label {
+    margin-bottom: rem(5);
+  }
+  input {
+    padding: rem(8);
+    font-size: rem(16);
+    border: none;
+    outline: 1px solid var(--input-border);
+  }
+  button {
+    padding: rem(5) rem(20);
+    font-size: rem(24);
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-top: none;
+    color: var(--text-color2);
+    transition: background 200ms ease;
+    &:hover {
+      background: var(--text-color2);
+      color: var(--text-color1);
+    }
+  }
+}
+
+.goal-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-list {
+  padding: 0;
+}
+
+.goal-item {
+  display: flex;
+  margin-top: rem(10);
+  background: var(--light-goal);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  .goal-text {
+    flex: 1;
+    padding-left: rem(20);
+    font-size: rem(18);
+    letter-spacing: rem(1);
+    font-family: var(--font-poppins);
+    font-weight: 200;
+    color: var(--light-goal-text);
+  }
+  button {
+    padding: rem(10);
+    border: none;
+    cursor: pointer;
+  }
+  .complete-btn {
+    color: var(--light-complete-btn);
+  }
+  .delete-btn {
+    color: var(--light-delete-btn);
+  }
+}

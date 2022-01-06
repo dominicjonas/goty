@@ -1,0 +1,64 @@
+@use '../util/' as *;
+
+html {
+  // this helps with accessibility. user is able to adjust fontsize in their browser
+  font-size: 100%;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background: var(--background);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h2 {
+  color: var(--text-color2);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app-header {
+  margin-top: rem(100);
+  .title {
+    margin-bottom: rem(5);
+    font-size: rem(50);
+    text-align: center;
+    color: var(--light-text2);
+  }
+}
+
+.year {
+  color: var(--light-text2);
+  position: absolute;
+  margin-top: rem(-5);
+  text-align: center;
+  font-size: rem(30);
+  opacity: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

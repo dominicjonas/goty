@@ -30,9 +30,9 @@ const SignIn = () => {
       })
   }
   return (
-    <>
+    <div className='signin-container'>
       <button onClick={signInWithGoogle}>Sign in with Google</button>
-    </>
+    </div>
   )
 }
 
