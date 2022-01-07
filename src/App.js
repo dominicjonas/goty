@@ -5,7 +5,6 @@ import { initializeApp } from '@firebase/app'
 import { firebaseConfig } from './firebase'
 
 import SignIn from './auth/SignIn'
-import SignOut from './auth/SignOut'
 
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { getAuth } from 'firebase/auth'
@@ -50,7 +49,6 @@ function App() {
         <h1 className='title' ref={titleRef}>
           Goals Of The Year
         </h1>
-        <SignOut />
       </header>
       <h2 className='year' ref={yearRef}>
         2022

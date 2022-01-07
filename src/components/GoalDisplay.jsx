@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import React, { useState, useEffect } from 'react'
 import Goal from './Goal'
-import Countdown from './Countdown'
+import UserWidget from './UserWidget'
 import { firebaseConfig } from '../firebase'
 import { initializeApp } from '@firebase/app'
 
@@ -33,8 +32,8 @@ const GoalDisplay = ({ titleRef }) => {
   const [userCred, setUserCred] = useState({})
   const [goals, setGoals] = useState([])
   const [inputText, setInputText] = useState('')
-
-  const gotyRef = useRef()
+  const [username, setUsername] = useState('')
+  const [photoURL, setPhotoURL] = useState('')
 
   // dont need this useEffect, just to see the user details
   useEffect(() => {
@@ -44,28 +43,15 @@ const GoalDisplay = ({ titleRef }) => {
       snapshot.docs.forEach((doc) => {
         goals.push({ ...doc.data(), id: doc.id })
       })
-      console.log(goals)
       setGoals(goals)
     })
     return () => {}
   }, [])
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline({
-  //     defaults: { duration: 0.75, ease: 'power1.out' }
-  //   })
-  //   tl.fromTo(
-  //     titleRef.current,
-  //     { y: 0, opacity: 1 },
-  //     { y: '-150px', opacity: 0, duration: 1.5 }
-  //   )
-  //   tl.fromTo(
-  //     gotyRef.current,
-  //     { y: '-450px', opacity: 0 },
-  //     { y: '10px', opacity: 1, duration: 1.5 }
-  //   )
-  //   return () => {}
-  // }, [])
+  useEffect(() => {
+    setUsername(userCred.displayName)
+    setPhotoURL(userCred.photoURL)
+  }, [userCred])
 
   const submitGoalHandler = (e) => {
     e.preventDefault()
@@ -83,10 +69,7 @@ const GoalDisplay = ({ titleRef }) => {
 
   return (
     <div>
-      <h1 className='goty-title' ref={gotyRef}>
-        GOTY
-      </h1>
-
+      <h1 className='goty-title'>GOTY</h1>
       <form className='goal-form-container'>
         <label>Add a goal</label>
         <input
@@ -114,7 +97,7 @@ const GoalDisplay = ({ titleRef }) => {
             ))}
         </ul>
       </div>
-      <Countdown />
+      <UserWidget photoURL={photoURL} username={username} />
     </div>
   )
 }

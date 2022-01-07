@@ -151,19 +151,6 @@ a:active {
   color: var(--text-color1);
 }
 
-.signout-button {
-  padding: 0.625rem 1.25rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border: 1px solid var(--text-color2);
-  color: var(--text-color2);
-  transition: background 200ms ease;
-}
-.signout-button:hover {
-  background: var(--text-color2);
-  color: var(--text-color1);
-}
-
 .goty-title {
   text-align: center;
   font-size: 3.125rem;
@@ -237,21 +224,61 @@ a:active {
   color: var(--light-delete-btn);
 }
 
-.countdown-container {
+.user-widget-container {
+  position: absolute;
+  background: var(--light-bg);
+  top: 10%;
+  padding: 0.625rem;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
   max-width: 25rem;
   color: var(--text-color2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.countdown-container .day,
-.countdown-container .hour,
-.countdown-container .minute,
-.countdown-container .second {
-  font-size: 1.5625rem;
-  text-align: center;
-  font-weight: 200;
+.user-widget-container .time-left {
+  font-weight: 100;
+  font-size: 1rem;
+}
+.user-widget-container .user-signout-container {
+  display: flex;
+  justify-content: space-between;
+}
+.user-widget-container .signout-button {
+  padding: 0.5rem 0.625rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--text-color2);
   color: var(--text-color2);
+  transition: background 200ms ease;
+}
+.user-widget-container .signout-button:hover {
+  background: var(--text-color2);
+  color: var(--text-color1);
+}
+.user-widget-container .user-info {
+  display: flex;
+}
+.user-widget-container .user-info img {
+  height: 2.1875rem;
+  width: 2.1875rem;
+  border-radius: 50%;
+  border: 0.25rem solid #b0c1c4;
+  margin-left: 0.625rem;
+}
+.user-widget-container .countdown-container {
+  display: flex;
+  justify-content: space-between;
+}
+.user-widget-container .countdown-container h4 {
+  font-size: 0.875rem;
+  font-weight: 100;
+}
+.user-widget-container .countdown-container h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 400;
+  color: var(--light-accent);
 }
 
 /*# sourceMappingURL=style.css.map */

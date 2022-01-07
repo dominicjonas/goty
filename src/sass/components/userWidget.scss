@@ -1,0 +1,59 @@
+@use '../util/' as *;
+
+.user-widget-container {
+  position: absolute;
+  background: var(--light-bg);
+  top: 10%;
+  padding: rem(10);
+  display: flex;
+  flex-direction: column;
+  max-width: rem(400);
+  color: var(--text-color2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  .time-left {
+    font-weight: 100;
+    font-size: rem(16);
+  }
+  .user-signout-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .signout-button {
+    padding: rem(8) rem(10);
+    margin-left: rem(8);
+    font-size: rem(16);
+    cursor: pointer;
+    border: 1px solid var(--text-color2);
+    color: var(--text-color2);
+    transition: background 200ms ease;
+    &:hover {
+      background: var(--text-color2);
+      color: var(--text-color1);
+    }
+  }
+  .user-info {
+    display: flex;
+    img {
+      height: rem(35);
+      width: rem(35);
+      border-radius: 50%;
+      border: rem(4) solid rgb(176, 193, 196);
+      margin-left: rem(10);
+    }
+  }
+  .countdown-container {
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      font-size: rem(14);
+      font-weight: 100;
+    }
+    h3 {
+      font-size: rem(20);
+      text-align: center;
+      font-weight: 400;
+      color: var(--light-accent);
+    }
+  }
+}
