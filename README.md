@@ -1,6 +1,6 @@
 # GOTY Goals Of The Year
 
-## Live site: https://goty.netlify.app/
+## [Live site](https://goty.netlify.app/)
 
 ## Overview
 Whilst collaborating on another larger scale project using Firebase with a fellow graduate of General Assembly, we found ourselves hitting roadblocks due to both of us having no experience with Firebase or NoSQL practices. I then suggested we both build a lightweight app using Firebase9 and React in 24 hours to better equip ourselves to tackle to the architecture of our larger project. I also used this as an opportunity to better verse myself in the GSAP animation library and its integration through React.
@@ -11,19 +11,20 @@ Whilst collaborating on another larger scale project using Firebase with a fello
 
 ## Technologies used
 ### Backend
-- Firebase9
-- Firebase9 authentication 
+- [Firebase9](https://firebase.google.com/docs)
+- [Firebase9 authentication](https://firebase.google.com/products/auth)
 ### Frontend
-- React
-- HTML5
-- CSS / SASS
-- Webpack
-- GSAP
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS)
+- [SASS](https://sass-lang.com/documentation)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [React.js](https://reactjs.org/docs/getting-started.html)
+- [GSAP](https://greensock.com/docs/)
 ### Design
-- Figma
+- [Figma](https://www.figma.com/)
 ### Version Control
-- Git
-- GitHub
+- [Git](https://git-scm.com/doc)
+- [GitHub](https://docs.github.com/en)
 
 ## Design, Plan & User-storys
 
